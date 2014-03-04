@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/tandrewnichols/safe-obj.png)](https://travis-ci.org/tandrewnichols/safe-obj)
+
 # Safe-obj
 
 Underscore helpers to make object accessors safe
