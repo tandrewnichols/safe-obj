@@ -1,7 +1,7 @@
 {
   "name": "safe-obj",
   "description": "Underscore helpers to make object accessors safe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Andrew Nichols <anichols@manta.com>",
   "repository": {
     "type": "git",
@@ -22,7 +22,12 @@
     "mocha-given": "0.0.18",
     "should": "3.1.3"
   },
-  "keywords": ["underscore", "helpers", "safety", "autovivification"],
+  "keywords": [
+    "underscore",
+    "helpers",
+    "safety",
+    "autovivification"
+  ],
   "main": "./safe.js",
   "engines": {
     "node": ">=0.10.0"
