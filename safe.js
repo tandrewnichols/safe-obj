@@ -1,12 +1,12 @@
 module.exports = {
   safe: function (thing, path, otherwise) {
-    thing = (thing instanceof Object) ? thing : {};
+    thing = (typeof thing === 'object') ? thing : {};
     var props = path.split('.');
     if (props.length === 1) {
       return thing[props.shift()] || otherwise;
     } else {
       var prop = props.shift();
-      return (thing[prop] instanceof Object) ? this.safe(thing[prop], props.join('.'), otherwise) : otherwise || undefined;
+      return (typeof thing[prop] === 'object') ? this.safe(thing[prop], props.join('.'), otherwise) : otherwise || undefined;
     }
   },
 
