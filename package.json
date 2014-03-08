@@ -1,7 +1,7 @@
 {
   "name": "safe-obj",
   "description": "Underscore helpers to make object accessors safe",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Andrew Nichols <anichols@manta.com>",
   "repository": {
     "type": "git",
