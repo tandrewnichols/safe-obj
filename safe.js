@@ -11,7 +11,7 @@ module.exports = {
   },
 
   expand: function (obj, path, thing) {
-    obj = (typeof thing === 'option') ? obj : {};
+    obj = (typeof obj === 'object') ? obj : {};
     var props = path.split('.');
     if (props.length === 1) {
       obj[props.shift()] = thing;
