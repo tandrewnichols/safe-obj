@@ -18,6 +18,20 @@ describe 'safe', ->
       When -> @result = _(@obj).safe('foo.bar.baz.bozo')
       Then -> should(@result).equal(undefined)
 
+    context 'the property is falsy', ->
+      Given -> @obj =
+        foo:
+          bar: ''
+      When -> @result = _(@obj).safe('foo.bar')
+      Then -> @result.should.equal ''
+
+    context 'the property is null', ->
+      Given -> @obj =
+        foo:
+          bar: null
+      When -> @result = _(@obj).safe('foo.bar')
+      Then -> should(@result).equal null
+
     context 'with array indices', ->
       Given -> @obj =
         foo:
@@ -38,6 +52,17 @@ describe 'safe', ->
           bar: {}
       When -> @result = _(@obj).safe('foo.bar.baz', [])
       Then -> @result.should.eql []
+
+    context 'with a default when property is falsy', ->
+      Given -> @obj =
+        foo:
+          bar: false
+      When -> @result = _(@obj).safe('foo.bar', 'blah')
+      Then -> @result.should.equal false
+
+    context 'with null', ->
+      When -> @result = _(null).safe('foo.bar')
+      Then -> should(@result).equal undefined
 
   describe '.expand', ->
     context 'with an empty object', ->

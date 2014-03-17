@@ -1,17 +1,17 @@
 module.exports = {
   safe: function (thing, path, otherwise) {
-    thing = (typeof thing === 'object') ? thing : {};
+    thing = (typeof thing === 'object' && thing != null) ? thing : {};
     var props = path.split('.');
     if (props.length === 1) {
-      return thing[props.shift()] || otherwise;
+      return typeof thing[props[0]] === 'undefined' ? otherwise : thing[props.shift()];
     } else {
       var prop = props.shift();
-      return (typeof thing[prop] === 'object') ? this.safe(thing[prop], props.join('.'), otherwise) : otherwise || undefined;
+      return (typeof thing[prop] === 'object' && thing != null) ? this.safe(thing[prop], props.join('.'), otherwise) : otherwise || undefined;
     }
   },
 
   expand: function (obj, path, thing) {
-    obj = (typeof obj === 'object') ? obj : {};
+    obj = (typeof obj === 'object' && obj != null) ? obj : {};
     var props = path.split('.');
     if (props.length === 1) {
       obj[props.shift()] = thing;
