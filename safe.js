@@ -6,7 +6,7 @@ module.exports = {
       return typeof thing[props[0]] === 'undefined' ? otherwise : thing[props.shift()];
     } else {
       var prop = props.shift();
-      return (typeof thing[prop] === 'object' && thing != null) ? this.safe(thing[prop], props.join('.'), otherwise) : otherwise || undefined;
+      return (typeof thing[prop] === 'object' && thing != null) ? this.safe(thing[prop], props.join('.'), otherwise) : otherwise;
     }
   },
 
