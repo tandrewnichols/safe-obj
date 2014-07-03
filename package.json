@@ -2,13 +2,27 @@
   "name": "safe-obj",
   "description": "Underscore helpers to make object accessors safe",
   "version": "0.0.7",
-  "author": "Andrew Nichols <anichols@manta.com>",
+  "author": {
+    "name": "mantacode",
+    "email": "code@manta.com",
+    "url": "www.manta.com"
+  },
+  "contributors": [
+    {
+      "name": "Andrew Nichols",
+      "email": "tandrewnichols@gmail.com"
+    },
+    {
+      "name": "Rob Zakrzewski",
+      "email": "rzakrzewski@manta.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/tandrewnichols/safe-obj.git"
   },
-  "homepage": "https://github.com/tandrewnichols/safe-obj",
-  "bugs": "https://github.com/tandrewnichols/safe-obj/issues",
+  "homepage": "https://github.com/mantacode/safe-obj",
+  "bugs": "https://github.com/mantacode/safe-obj/issues",
   "license": "MIT",
   "scripts": {
     "test": "mocha test",
@@ -16,11 +30,11 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "coffee-script": "1.6.1",
-    "underscore": "1.5.2",
+    "coffee-script": "~1.7.1",
+    "underscore": "~1.6.0",
     "mocha": "git://github.com/tandrewnichols/mocha.git#suppress-stack",
-    "mocha-given": "0.0.18",
-    "should": "3.1.3"
+    "mocha-given": "~0.0.18",
+    "should": "~3.1.3"
   },
   "keywords": [
     "underscore",
@@ -30,6 +44,6 @@
   ],
   "main": "./safe.js",
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.8.0"
   }
 }
