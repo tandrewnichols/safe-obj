@@ -1,5 +1,25 @@
 ;(function(self) {
 
+  self.ILLEGAL_KEYS = ["constructor", "__proto__", "prototype"];
+  
+  self.isIllegalKey = function (key) {
+    return self.ILLEGAL_KEYS.indexOf(key) !== -1;
+  }
+  
+  self.isProtoPath = function (path) {
+    return Array.isArray(path)
+      ? path.some(self.isIllegalKey)
+      : typeof path === "string"
+        ? self.isIllegalKey(path)
+        : false;
+  }
+  
+  self.disallowProtoPath = function (path) {
+    if (self.isProtoPath(path)) {
+      throw new Error("Unsafe path encountered: " + path)
+    }
+  }
+
   self.safe = function (obj, path, otherwise) {
     obj = isObject(obj) ? obj : {};
     var props = path.split('.');
@@ -14,6 +34,7 @@
   self.expand = function (obj, path, thing) {
     obj = isObject(obj) ? obj : {};
     var props = path.split('.');
+    self.disallowProtoPath(props);
     if (props.length === 1) {
       obj[props.shift()] = thing;
     } else {
