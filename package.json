@@ -3,26 +3,16 @@
   "description": "Underscore helpers to make object accessors safe",
   "version": "0.0.8",
   "author": {
-    "name": "mantacode",
-    "email": "code@manta.com",
-    "url": "www.manta.com"
+    "name": "Andrew Nichols",
+    "email": "tandrewnichols@gmail.com",
+    "url": "tandrewnichols.me"
   },
-  "contributors": [
-    {
-      "name": "Andrew Nichols",
-      "email": "tandrewnichols@gmail.com"
-    },
-    {
-      "name": "Rob Zakrzewski",
-      "email": "rzakrzewski@manta.com"
-    }
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/tandrewnichols/safe-obj.git"
   },
-  "homepage": "https://github.com/mantacode/safe-obj",
-  "bugs": "https://github.com/mantacode/safe-obj/issues",
+  "homepage": "https://github.com/tandrewnichols/safe-obj",
+  "bugs": "https://github.com/tandrewnichols/safe-obj/issues",
   "license": "MIT",
   "scripts": {
     "test": "mocha test",
